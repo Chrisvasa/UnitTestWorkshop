@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
+using FluentAssertions;
 
 namespace WordLib.Tests
 {
@@ -22,6 +23,17 @@ namespace WordLib.Tests
             bool actual = word.Palindrome(input);
             // Assert
             Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void PalindromeShouldReturnExceptionError_IfInputIsEmptyString()
+        {
+            // Arrange
+            Worder word = new Worder();
+            string expected = "Empty string";
+            // Act
+            Exception actual = Assert.Throws<Exception>(() => word.Palindrome(""));
+            // Assert
+            actual.Message.Should().Be(expected);
         }
     }
 }
