@@ -92,7 +92,7 @@ namespace WordLib.Tests
 
             // Act
             // Gets the exception error that should be thrown when the input includes wrong characters
-            Exception actual = Assert.Throws<Exception>(() => word.Sorter("Æ"));
+            Exception actual = Assert.Throws<Exception>(() => word.Sorter(input));
 
             // Assert
             // Checks so that the actual input is same as expected
