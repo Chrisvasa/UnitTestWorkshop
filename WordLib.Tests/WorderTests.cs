@@ -14,9 +14,9 @@ namespace WordLib.Tests
         {
             // Arrange
             Worder word = new Worder();
-            string expected = "tset";
+            bool expected = false;
             // Act
-            string actual = word.Palindrome();
+            bool actual = word.Palindrome("Test");
             // Assert
             Assert.Equal(expected, actual);
         }

@@ -8,7 +8,7 @@ namespace WordLib
 {
     public class Worder
     {
-        public string Palindrome()
+        public bool Palindrome(string input)
         {
             throw new NotImplementedException();
         }
