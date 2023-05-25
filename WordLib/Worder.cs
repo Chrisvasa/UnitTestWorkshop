@@ -15,10 +15,12 @@ namespace WordLib
             {
                 throw new Exception("Empty string");
             }
+
             input = input.ToLower();
             // Turns input into a char array and then reverses it
-            // Creates a string from the now reversed char array
+            // Creates a string from the now reversed array of chars
             string output = new string(input.ToCharArray().Reverse().ToArray());
+
             // Checks if input is a palindrome or not
             if(input == output)
             {
@@ -26,6 +28,11 @@ namespace WordLib
             }
 
             return false;
+        }
+
+        public string Sorter(string input)
+        {
+            throw new NotImplementedException();
         }
     }
 }
