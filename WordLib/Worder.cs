@@ -9,21 +9,19 @@ namespace WordLib
     public class Worder
     {
         // Takes a string as input and then checks if that string is a palindrome
-        public string Palindrome(string input)
+        public bool Palindrome(string input)
         {
             input = input.ToLower();
             // Turns input into a char array and then reverses it
-            char[] inputChar = input.ToCharArray();
-            inputChar.Reverse();
             // Creates a string from the now reversed char array
             string output = new string(input.ToCharArray().Reverse().ToArray());
             // Checks if input is a palindrome or not
             if(input == output)
             {
-                return output;
+                return true;
             }
 
-            return output;
+            return false;
         }
     }
 }
