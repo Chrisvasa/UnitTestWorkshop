@@ -9,14 +9,17 @@ namespace WordLib.Tests
 {
     public class WorderTests
     {
-        [Fact]
-        public void PalindromeShouldReturnReversedInput()
+        [Theory]
+        [InlineData("Test", false)]
+        [InlineData("Civic", true)]
+        [InlineData("leVEl", true)]
+        [InlineData("moon", false)]
+        public void PalindromeShouldReturnReversedInput(string input, bool expected)
         {
             // Arrange
             Worder word = new Worder();
-            bool expected = false;
             // Act
-            bool actual = word.Palindrome("Test");
+            bool actual = word.Palindrome(input);
             // Assert
             Assert.Equal(expected, actual);
         }

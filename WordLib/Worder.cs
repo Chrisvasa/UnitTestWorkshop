@@ -8,9 +8,18 @@ namespace WordLib
 {
     public class Worder
     {
+        // Takes a string as input and then checks if that string is a palindrome
         public bool Palindrome(string input)
         {
-            throw new NotImplementedException();
+            char[] inputChar = input.ToCharArray();
+            inputChar.Reverse();
+
+            if(input == inputChar.ToString())
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
