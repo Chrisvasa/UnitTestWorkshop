@@ -79,15 +79,19 @@ namespace WordLib.Tests
             actual.Message.Should().Be(expected);
         }
 
-        [Fact]
-        public void SorterShouldReturnExceptionError_IfInputIsNotEnglish()
+        [Theory]
+        [InlineData("Åäö")]
+        [InlineData("Testîng")]
+        [InlineData("Grillsäsong")]
+        [InlineData("smørrebrød")]
+        public void SorterShouldReturnExceptionError_IfInputIsNotEnglish(string input)
         {
             // Arrange
             Worder word = new Worder();
-            string expected = "Invalid input";
+            string expected = "Invalid input"; // Expected exception message
 
             // Act
-            // Gets the exception error that should be thrown when the input is an empty string
+            // Gets the exception error that should be thrown when the input includes wrong characters
             Exception actual = Assert.Throws<Exception>(() => word.Sorter("Æ"));
 
             // Assert

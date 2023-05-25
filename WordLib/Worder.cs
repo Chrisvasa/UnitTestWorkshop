@@ -39,12 +39,14 @@ namespace WordLib
             {
                 throw new Exception("Empty string");
             }
+            // Regex that includes the allowed chars
             bool match = Regex.IsMatch(input, "^[a-zA-Z]*$");
+            // If string has invalid chars, returns an exception
             if(!match)
             {
                 throw new Exception("Invalid input");
             }
-
+            // Turns input into lowercase, then creates an array and sorts that char array before returning it as a new string
             input = input.ToLower();
             char[] chars = input.ToArray();
             Array.Sort(chars);
