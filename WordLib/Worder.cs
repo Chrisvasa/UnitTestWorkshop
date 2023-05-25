@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace WordLib
         // Takes a string as input and then checks if that string is a palindrome
         public bool Palindrome(string input)
         {
-            if(input.Length == 0)
+            if(String.IsNullOrWhiteSpace(input))
             {
                 throw new Exception("Empty string");
             }
@@ -33,12 +34,11 @@ namespace WordLib
 
         public string Sorter(string input)
         {
-            if (input.Length == 0)
+            if (String.IsNullOrWhiteSpace(input))
             {
                 throw new Exception("Empty string");
             }
 
-            CultureInfo culture = new CultureInfo("sv-SE");
             input = input.ToLower();
             char[] chars = input.ToArray();
             Array.Sort(chars);
