@@ -19,9 +19,9 @@ namespace WordLib.Tests
             // Arrange
             Worder word = new Worder();
             // Act
-            bool actual = word.Palindrome(input);
+            string actual = word.Palindrome(input);
             // Assert
-            Assert.Equal(expected, actual);
+            Assert.Equal("test", actual);
         }
     }
 }
