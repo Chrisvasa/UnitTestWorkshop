@@ -49,7 +49,7 @@ namespace WordLib.Tests
         [InlineData("Adbc", "abcd")]
         [InlineData("Efig", "efgi")]
         [InlineData("bfDcz", "bcdfz")]
-        [InlineData("Åärtk", "krtåä")]
+        [InlineData("Åärtkö", "krtåäö")]
         public void SorterShouldReturnAlphabeticallyOrderedString(string input, string expected)
         {
             // Arrange
@@ -60,6 +60,22 @@ namespace WordLib.Tests
 
             // Assert
             Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void SorterShouldReturnExceptionError_IfInputIsEmptyString()
+        {
+            // Arrange
+            Worder word = new Worder();
+            string expected = "Empty string";
+
+            // Act
+            // Gets the exception error that should be thrown when the input is an empty string
+            Exception actual = Assert.Throws<Exception>(() => word.Palindrome(""));
+
+            // Assert
+            // Checks so that the actual input is same as expected
+            actual.Message.Should().Be(expected);
         }
     }
 }

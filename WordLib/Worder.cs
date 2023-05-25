@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,12 @@ namespace WordLib
 
         public string Sorter(string input)
         {
+            if (input.Length == 0)
+            {
+                throw new Exception("Empty string");
+            }
+
+            CultureInfo culture = new CultureInfo("sv-SE");
             input = input.ToLower();
             char[] chars = input.ToArray();
             Array.Sort(chars);
