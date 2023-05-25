@@ -32,7 +32,9 @@ namespace WordLib
 
         public string Sorter(string input)
         {
-            throw new NotImplementedException();
+            char[] chars = input.ToArray();
+            Array.Sort(chars);
+            return new string(chars);
         }
     }
 }

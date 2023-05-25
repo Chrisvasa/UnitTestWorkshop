@@ -45,6 +45,7 @@ namespace WordLib.Tests
             actual.Message.Should().Be(expected);
         }
 
+        [Fact]
         public void SorterShouldReturnAlphabeticallyOrderedString()
         {
             // Arrange
