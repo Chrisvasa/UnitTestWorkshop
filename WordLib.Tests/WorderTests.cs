@@ -45,15 +45,18 @@ namespace WordLib.Tests
             actual.Message.Should().Be(expected);
         }
 
-        [Fact]
-        public void SorterShouldReturnAlphabeticallyOrderedString()
+        [Theory]
+        [InlineData("Adbc", "abcd")]
+        [InlineData("Efig", "efgi")]
+        [InlineData("bfDcz", "bcdfz")]
+        [InlineData("Åärtk", "krtåä")]
+        public void SorterShouldReturnAlphabeticallyOrderedString(string input, string expected)
         {
             // Arrange
             Worder word = new Worder();
-            string expected = "aBd";
 
             // Act
-            string actual = word.Sorter("Bad");
+            string actual = word.Sorter(input);
 
             // Assert
             Assert.Equal(expected, actual);

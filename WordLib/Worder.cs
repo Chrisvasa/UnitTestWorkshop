@@ -32,6 +32,7 @@ namespace WordLib
 
         public string Sorter(string input)
         {
+            input = input.ToLower();
             char[] chars = input.ToArray();
             Array.Sort(chars);
             return new string(chars);
