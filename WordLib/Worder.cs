@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace WordLib
@@ -37,6 +38,11 @@ namespace WordLib
             if (String.IsNullOrWhiteSpace(input))
             {
                 throw new Exception("Empty string");
+            }
+            bool match = Regex.IsMatch(input, "^[a-zA-Z]*$");
+            if(!match)
+            {
+                throw new Exception("Invalid input");
             }
 
             input = input.ToLower();

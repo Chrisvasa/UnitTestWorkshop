@@ -72,7 +72,7 @@ namespace WordLib.Tests
 
             // Act
             // Gets the exception error that should be thrown when the input is an empty string
-            Exception actual = Assert.Throws<Exception>(() => word.Palindrome(""));
+            Exception actual = Assert.Throws<Exception>(() => word.Sorter(""));
 
             // Assert
             // Checks so that the actual input is same as expected
@@ -88,7 +88,7 @@ namespace WordLib.Tests
 
             // Act
             // Gets the exception error that should be thrown when the input is an empty string
-            Exception actual = Assert.Throws<Exception>(() => word.Palindrome("åäö"));
+            Exception actual = Assert.Throws<Exception>(() => word.Sorter("Æ"));
 
             // Assert
             // Checks so that the actual input is same as expected
